@@ -28,7 +28,7 @@ function initMap() {
     addMarkers();
   }
   $('#submit').on('click', function(e) {
-    alert("Please wait for your song to upload before continuing! This process usually takes 10-20 seconds.");
+    
     var x = document.getElementById("form1");
     var name = x.elements["name"].value;
     var artist = x.elements["artist"].value;
@@ -40,7 +40,7 @@ function initMap() {
       return;
     }
 
-
+    alert("Please wait for your song to upload before continuing! This process usually takes 10-20 seconds.");
     var fileUploadControl = $("#audio")[0];
     if (fileUploadControl.files.length > 0) {
       var file = fileUploadControl.files[0];
