@@ -168,7 +168,7 @@ marker.addListener('click', function() {
      fillOpacity: 0.35,
      map: map,
      center: marker.get('position'),
-     radius: diff * 100
+     radius: diff * 10
    });
     if (curr_marker === null) {
     marker.infowindow.open(marker.get('map'), marker);
