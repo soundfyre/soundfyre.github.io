@@ -27,6 +27,7 @@ function initMap() {
     addMarkers();
   }
   $('#submit').on('click', function(e) {
+    alert("Please wait for your song to upload before continuing! There will be another alert.");
     var x = document.getElementById("form1");
     var name = x.elements["name"].value;
     var artist = x.elements["artist"].value;
@@ -34,7 +35,7 @@ function initMap() {
 
     e.preventDefault();
     if (name === '' || artist === '' || file_name === '') {
-      alert('Please fill out both fields.');
+      alert('Please fill out all fields.');
       return;
     }
 
@@ -76,7 +77,7 @@ function initMap() {
     marker1.set("markerobject", newMarker);
     newMarker.save(null, {
       success: function(newMarker) {
-        alert('Successfully added marker!');
+        alert('Successfully added song!');
         marker1_mess = '<h2>Song: ' + newMarker.get('song') + '</h2>' + '<h2>Artist: ' + newMarker.get('artist') + '</h2>' +
     '<h1><audio controls><source src = ' + newMarker.get('audio').url() + ' type = "audio/mp3"></audio></h1><p>' + '<span id="number">0</span>' +'<a id="likes" onclick="like(1);">&nbsp&nbsp&nbspLike</a></p><p>' + 
     '<span id="number2">0</span>' + '<a id="dislikes" onclick="like(-1);">&nbsp&nbsp&nbspDislike</a></p>';
@@ -84,7 +85,7 @@ function initMap() {
       attachSecretMessage(marker1, marker1_mess);
       },
       error: function(newMarker, error) {
-        alert('Failed to add marker!');
+        alert('Failed to add song!');
       }
 
     })
