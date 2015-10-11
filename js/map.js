@@ -1,3 +1,4 @@
+
 Parse.initialize("4EKumHrtgH5GtrGswrjWCQVDrKRCcdihxaG006eo", "OEhXvtCNHGIjsEQOfRFdk6RZUJ8A2CW0nzHxKfu9");
 var map;
 var myLatLng = {};
@@ -27,7 +28,7 @@ function initMap() {
     addMarkers();
   }
   $('#submit').on('click', function(e) {
-    alert("Please wait for your song to upload before continuing! There will be another alert.");
+    alert("Please wait for your song to upload before continuing! This process usually takes 10-20 seconds.");
     var x = document.getElementById("form1");
     var name = x.elements["name"].value;
     var artist = x.elements["artist"].value;
@@ -78,8 +79,8 @@ function initMap() {
     newMarker.save(null, {
       success: function(newMarker) {
         alert('Successfully added song!');
-        marker1_mess = '<h2>Song: ' + newMarker.get('song') + '</h2>' + '<h2>Artist: ' + newMarker.get('artist') + '</h2>' +
-    '<h1><audio controls><source src = ' + newMarker.get('audio').url() + ' type = "audio/mp3"></audio></h1><p>' + '<span id="number">0</span>' +'<a id="likes" onclick="like(1);">&nbsp&nbsp&nbspLike</a></p><p>' + 
+        marker1_mess = '<h3>Song: ' + newMarker.get('song') + '</h3>' + '<h2>Artist: ' + newMarker.get('artist') + '</h3>' +
+    '<h2><audio controls><source src = ' + newMarker.get('audio').url() + ' type = "audio/mp3"></audio></h2><p>' + '<span id="number">0</span>' +'<a id="likes" onclick="like(1);">&nbsp&nbsp&nbspLike</a></p><p>' + 
     '<span id="number2">0</span>' + '<a id="dislikes" onclick="like(-1);">&nbsp&nbsp&nbspDislike</a></p>';
     
       attachSecretMessage(marker1, marker1_mess);
@@ -127,8 +128,8 @@ function addMarkers() {
         liked: false
         });
         temp_mark.setMap(map);
-        var secret = '<h2>Song: ' + temp_MarkerObject.get('song') + '</h2>' + '<h2>Artist: ' + temp_MarkerObject.get('artist') + '</h2>' +
-    '<h1><audio controls><source src = ' + temp_MarkerObject.get('audio').url() + ' type = "audio/mp3"></audio></h1><p>' + '<span id="number">' + temp_MarkerObject.get('likes') 
+        var secret = '<h3>Song: ' + temp_MarkerObject.get('song') + '</h3>' + '<h3>Artist: ' + temp_MarkerObject.get('artist') + '</h3>' +
+    '<h2><audio controls><source src = ' + temp_MarkerObject.get('audio').url() + ' type = "audio/mp3"></audio></><p>' + '<span id="number">' + temp_MarkerObject.get('likes') 
     + '</span>' + '<a id="likes" onclick="like(1);">&nbsp&nbsp&nbspLike</a></p><p>'+ '<span id="number2">' + temp_MarkerObject.get('dislikes') + '</span><a id="dislikes" onclick="like(-1);">&nbsp&nbsp&nbspDislike</a></p>';
         attachSecretMessage(temp_mark, secret);
       }
