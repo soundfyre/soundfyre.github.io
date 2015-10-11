@@ -129,7 +129,7 @@ function addMarkers() {
         });
         temp_mark.setMap(map);
         var secret = '<h3>Song: ' + temp_MarkerObject.get('song') + '</h3>' + '<h3>Artist: ' + temp_MarkerObject.get('artist') + '</h3>' +
-    '<h2><audio controls><source src = ' + temp_MarkerObject.get('audio').url() + ' type = "audio/mp3"></audio></><p>' + '<span id="number">' + temp_MarkerObject.get('likes') 
+    '<h2><audio controls><source src = ' + temp_MarkerObject.get('audio').url() + ' type = "audio/mp3"></audio></h2><p>' + '<span id="number">' + temp_MarkerObject.get('likes') 
     + '</span>' + '<a id="likes" onclick="like(1);">&nbsp&nbsp&nbspLike</a></p><p>'+ '<span id="number2">' + temp_MarkerObject.get('dislikes') + '</span><a id="dislikes" onclick="like(-1);">&nbsp&nbsp&nbspDislike</a></p>';
         attachSecretMessage(temp_mark, secret);
       }
