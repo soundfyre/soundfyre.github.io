@@ -40,7 +40,7 @@ function initMap() {
       return;
     }
 
-    alert("Please wait for your song to upload before continuing! This process usually takes 10-20 seconds.");
+    alert("Please wait for your song to upload before continuing! This process usually takes 30-60 seconds.");
     var fileUploadControl = $("#audio")[0];
     if (fileUploadControl.files.length > 0) {
       var file = fileUploadControl.files[0];
