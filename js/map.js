@@ -25,17 +25,19 @@ function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
       center: myLatLng,
       zoom: 15,
-      mapTypeId: google.maps.MapTypeId.SATELLITE
+      mapTypeId: google.maps.MapTypeId.SATELLITEt
     });
     addMarkers();
   }
   $('#submit').on('click', function(e) {
-    
+    if (!found) {
+      alert("We couldn't find your location. Please enable location services to upload.");
+      return;
+    }
     var x = document.getElementById("form1");
     var name = x.elements["name"].value;
     var artist = x.elements["artist"].value;
     var file_name = x.elements["song"].value;
-
     e.preventDefault();
     if (name === '' || artist === '' || file_name === '') {
       alert('Please fill out all fields.');
