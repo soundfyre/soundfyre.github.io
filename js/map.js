@@ -15,7 +15,8 @@ function initMap() {
       found = true;
       map = new google.maps.Map(document.getElementById('map'), {
       center: myLatLng,
-      zoom: 15
+      zoom: 15,
+      mapTypeId: google.maps.MapTypeId.SATELLITE
       });
       addMarkers();
     })
@@ -23,7 +24,8 @@ function initMap() {
     myLatLng = {lat: 37.869749, lng: -122.261953};
     map = new google.maps.Map(document.getElementById('map'), {
       center: myLatLng,
-      zoom: 15
+      zoom: 15,
+      mapTypeId: google.maps.MapTypeId.SATELLITE
     });
     addMarkers();
   }
